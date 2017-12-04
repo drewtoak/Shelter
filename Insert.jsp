@@ -4,11 +4,11 @@
 <html><head><title>Insert</title></head>
 <h1>Insert New Entry</h1>
 <body>
-<%String table = "Animals";
-table = request.getParameter("editTable");
-System.out.print(table);
-if (table.equals("Animals")) {
-request.setAttribute("editTable", table);
+
+<%String editTable = "Animals";
+editTable = request.getParameter("editTable");
+if (editTable.equals("Animals")) {
+request.setAttribute("editTable", editTable);
 %>
 <form action="InsertQuery.jsp" method = "get">
   Animal ID#:<br>
@@ -22,17 +22,17 @@ request.setAttribute("editTable", table);
   Age:<br>
   <input type="text" name="age"><br>
   Vaccinated (Y/N):<br>
-  <input type="text" name="vaccinated"><br>
+  <input type="text" name="vacc"><br>
   Fixed (Y/N):<br>
-  <input type="text" name="fixed"><br>
+  <input type="text" name="fix"><br>
   Responsible Worker ID#:<br>
   <input type="text" name="w_id">
 <input type="submit" value="Submit">
 </form>
 <%}
 
-if (table.equals("Employee")) {
-	request.setAttribute("editTable", table);%>
+if (editTable.equals("Employee")) {
+	request.setAttribute("editTable", editTable);%>
 <form action="InsertQuery.jsp" method = "get">
   Employee ID#:<br>
   <input type="text" name="w_id"><br>
@@ -46,8 +46,8 @@ if (table.equals("Employee")) {
 </form>
 <%} 
 
-if (table.equals("Worker")) {
-	request.setAttribute("editTable", table);%>
+if (editTable.equals("Worker")) {
+	request.setAttribute("editTable", editTable);%>
 <form action="InsertQuery.jsp" method = "get">
   Worker ID#:<br>
   <input type="text" name="w_id"><br>
@@ -55,15 +55,15 @@ if (table.equals("Worker")) {
   <input type="text" name="w_name"><br>
   Address:<br>
   <input type="text" name="w_address"><br>
-  Duties:<br>
-  <input type="text" name="duties"><br>
+  Duty:<br>
+  <input type="text" name="duty"><br>
   Hours:<br>
   <input type="text" name="hours"><br>
 <input type="submit" value="Submit">
 </form> <%} 
 
-if (table.equals("Foster")) {
-	request.setAttribute("editTable", table);%>
+if (editTable.equals("Foster")) {
+	request.setAttribute("editTable", editTable);%>
 <form action="InsertQuery.jsp" method = "get">
   Foster Name:<br>
   <input type="text" name="f_name"><br>
@@ -74,8 +74,8 @@ if (table.equals("Foster")) {
 <input type="submit" value="Submit">
 </form> <%} 
 
-if (table.equals("Adopter")) { 
-request.setAttribute("editTable", table);%>
+if (editTable.equals("Adopter")) { 
+request.setAttribute("editTable", editTable);%>
 <form action="InsertQuery.jsp" method = "get">
   Adopter ID#:<br>
   <input type="text" name="adpt_id"><br>
@@ -88,40 +88,40 @@ request.setAttribute("editTable", table);%>
 <input type="submit" value="Submit">
 </form> <%} 
 
-if (table.equals("Supplies")) { 
-request.setAttribute("editTable", table);%>
+if (editTable.equals("Supplies")) { 
+request.setAttribute("editTable", editTable);%>
 <form action="InsertQuery.jsp" method = "get">
   Supply ID#:<br>
   <input type="text" name="s_id"><br>
   Type:<br>
   <input type="text" name="type"><br>
   Quantity:<br>
-  <input type="text" name="quantity"><br>
+  <input type="text" name="quant"><br>
   Cost ($):<br>
   <input type="text" name="cost"><br>
   Supplier:<br>
-  <input type="text" name="supplier"><br>
+  <input type="text" name="suppl"><br>
 <input type="submit" value="Submit">
 </form> <%}
 
-if (table.equals("Medical_Staff")) { 
-request.setAttribute("editTable", table);%>
+if (editTable.equals("Medical_Staff")) { 
+request.setAttribute("editTable", editTable);%>
 <form action="InsertQuery.jsp" method = "get">
   Medical Staff ID#:<br>
   <input type="text" name="m_id"><br>
   Name:<br>
   <input type="text" name="name"><br>
   Address:<br>
-  <input type="text" name="address"><br>
+  <input type="text" name="addr"><br>
   Phone (no spaces or dashes):<br>
   <input type="text" name="phone"><br>
   Specialization:<br>
-  <input type="text" name="specialization"><br>
+  <input type="text" name="special"><br>
 <input type="submit" value="Submit">
 </form> <%}
 
-if (table.equals("Manages")) { 
-request.setAttribute("editTable", table);%>
+if (editTable.equals("Manages")) { 
+request.setAttribute("editTable", editTable);%>
 <form action="InsertQuery.jsp" method = "get">
   Manager ID#:<br>
   <input type="text" name="m_id"><br>
@@ -132,8 +132,8 @@ request.setAttribute("editTable", table);%>
 <input type="submit" value="Submit">
 </form> <%}
 
-if (table.equals("Fosters")) {
-	request.setAttribute("editTable", table);%>
+if (editTable.equals("Fosters")) {
+	request.setAttribute("editTable", editTable);%>
 <form action="InsertQuery.jsp" method = "get">
   Foster Name:<br>
   <input type="text" name="f_name"><br>
@@ -142,14 +142,14 @@ if (table.equals("Fosters")) {
   Animal ID#:<br>
   <input type="text" name="a_id"><br>\
   Start date (mm/dd/yy):<br>
-  <input type="text" name="start_date"><br>
+  <input type="text" name="startd"><br>
   End date (mm/dd/yy):<br>
-  <input type="text" name="end_date"><br>
+  <input type="text" name="endd"><br>
 <input type="submit" value="Submit">
 </form> <%}
 
-if (table.equals("Uses")) { 
-request.setAttribute("editTable", table);%>
+if (editTable.equals("Uses")) { 
+request.setAttribute("editTable", editTable);%>
 <form action="InsertQuery.jsp" method = "get">
   Worker ID#:<br>
   <input type="text" name="w_id"><br>
@@ -158,8 +158,8 @@ request.setAttribute("editTable", table);%>
 <input type="submit" value="Submit">
 </form> <%}
 
-if (table.equals("Adopts")) { 
-request.setAttribute("editTable", table);%>
+if (editTable.equals("Adopts")) { 
+request.setAttribute("editTable", editTable);%>
 <form action="InsertQuery.jsp" method = "get">
   Animal ID#:<br>
   <input type="text" name="a_id"><br>
@@ -170,8 +170,8 @@ request.setAttribute("editTable", table);%>
 <input type="submit" value="Submit">
 </form> <%}
 
-if (table.equals("Appointment")) { 
-	request.setAttribute("editTable", table);
+if (editTable.equals("Appointment")) { 
+	request.setAttribute("editTable", editTable);
 %>
 <form action="InsertQuery.jsp" method = "get">
   Animal ID#:<br>
