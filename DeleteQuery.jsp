@@ -34,15 +34,15 @@
     case "Foster":
         String f_name = request.getParameter("f_name");
         String f_address = request.getParameter("f_address");
-        st.executeUpdate("Delete From foster Where f_name = " + f_name + " And f_address = " + f_address);
-        st.executeUpdate("Delete From fosters Where f_name = " + f_name + " And f_address = " + f_address);
+        st.executeUpdate("Delete From foster Where f_name = '" + f_name + "' And f_address = '" + f_address + "'");
+        st.executeUpdate("Delete From fosters Where f_name = '" + f_name + "' And f_address = '" + f_address + "'");
         break;
     case "Fosters":
     		String ff_name = request.getParameter("f_name");
     		String ff_address = request.getParameter("f_address");
     		String af_id = request.getParameter("a_id");
-    		st.executeUpdate("Delete From fosters Where f_name = " + ff_name + 
-    				" And f_address = " + ff_address + " And a_id = " + af_id);
+    		st.executeUpdate("Delete From fosters Where f_name = '" + ff_name + "' And f_address = '" + ff_address + 
+    				"' And a_id = " + af_id);
     		break;
     case "Adopts":
         String adpts_id = request.getParameter("adpt_id");
