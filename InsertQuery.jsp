@@ -62,7 +62,7 @@
     			fix = request.getParameter("fix");
     		if (request.getParameter("w_id")  != null)
    	 		w_id = request.getParameter("w_id");
-   	 	query = "insert into Animals("+ a_id + ", '" + a_name + "', '" + species + "', '" + breed + "', " + age + ", '" + vacc + "', '" + fix + "', " + w_id + ")"; 
+   	 	query = "insert into Animals values("+ a_id + ", '" + a_name + "', '" + species + "', '" + breed + "', " + age + ", '" + vacc + "', '" + fix + "', " + w_id + ")"; 
         break;
         
     case "Employee":
@@ -74,8 +74,8 @@
     			salary = request.getParameter("salary");
     		if (request.getParameter("position")  != null)
     			position = request.getParameter("position");
-   	 	String wQuery = "insert into Worker(" + w_id + ", '" + w_name + ", null, null, null)";
-    		query = "insert into Employee("+ w_id + ", " + salary + ", '" + position + "')"; 
+   	 	String wQuery = "insert into Worker values(" + w_id + ", '" + w_name + ", null, null, null)";
+    		query = "insert into Employee values("+ w_id + ", " + salary + ", '" + position + "')"; 
     		break;
     		
     case "Worker":
@@ -89,7 +89,7 @@
     			duty = request.getParameter("duty");
     		if (request.getParameter("hours")  != null)
     			hours = request.getParameter("hours");
-    		query = "insert into Worker("+ w_id + ", '" + w_name + ", '" + w_address + "', '" + duty + "', " + hours + ")";
+    		query = "insert into Worker values("+ w_id + ", '" + w_name + ", '" + w_address + "', '" + duty + "', " + hours + ")";
     		break;
 
     case "Foster":
@@ -99,7 +99,7 @@
     			f_address = request.getParameter("f_address");
     		if (request.getParameter("preference")  != null)
     			preference = request.getParameter("preference");
-    		query = "insert into Foster('"+ f_name + "', '" + f_address + "', '" + preference + "')";
+    		query = "insert into Foster values('"+ f_name + "', '" + f_address + "', '" + preference + "')";
         break;
         
     case "Adopter":
@@ -111,7 +111,7 @@
     			preference = request.getParameter("preference");
     		if (request.getParameter("adpt_address")  != null)
     			adpt_address = request.getParameter("adpt_address");
-    		query = "insert into Adopter("+ adpt_id + ", '" + adpt_name + "', '" + adpt_address + "', '" + preference +"')"; 
+    		query = "insert into Adopter values("+ adpt_id + ", '" + adpt_name + "', '" + adpt_address + "', '" + preference +"')"; 
         break;
         
     case "Supplies":
@@ -149,7 +149,7 @@
     			w_id = request.getParameter("w_id");
     		if (request.getParameter("startd")  != null)
     			startd = request.getParameter("startd");
-    		query = "insert into Manages("+ m_id + ", " + w_id + ", '" + startd + "')"; 
+    		query = "insert into Manages values("+ m_id + ", " + w_id + ", '" + startd + "')"; 
         break;
         
     case "Fosters":
@@ -163,7 +163,7 @@
     			startd = request.getParameter("startd");
     		if (request.getParameter("endd")  != null)
     			endd = request.getParameter("endd");
-    		query = "insert into Fosters('"+ f_name + "', '" + f_address + "', " + a_id + ", '" + startd + "', '" + endd + "')"; 
+    		query = "insert into Fosters values('"+ f_name + "', '" + f_address + "', " + a_id + ", '" + startd + "', '" + endd + "')"; 
         break;
         
     case "Uses":
@@ -171,7 +171,7 @@
    	 		s_id = request.getParameter("s_id");
     		if (request.getParameter("w_id")  != null)
     			w_id = request.getParameter("w_id");
-    		query = "insert into Uses("+ s_id + ", " + w_id + ")"; 
+    		query = "insert into Uses values("+ s_id + ", " + w_id + ")"; 
         break;
         
     case "Adopts":
@@ -181,7 +181,7 @@
     			adpt_id = request.getParameter("adpt_id");
     		if (request.getParameter("adpt_date")  != null)
     			adpt_date = request.getParameter("adpt_date");
-    		query = "insert into Adopts("+ a_id + ", " + adpt_id + ", '" + adpt_date + "')"; 
+    		query = "insert into Adopts values("+ a_id + ", " + adpt_id + ", '" + adpt_date + "')"; 
         break;
         
     case "Appointment":
@@ -193,9 +193,13 @@
     			date = request.getParameter("date");
     		if (request.getParameter("purpose")  != null)
     			purpose = request.getParameter("purpose");
-    		query = "insert into Appointment("+ a_id + ", " + m_id + ", '" + date + "', '" + purpose + "')"; 
+    		query = "insert into Appointment values("+ a_id + ", " + m_id + ", '" + date + "', '" + purpose + "')"; 
         break;
 }
-	st.executeQuery(query);
+	st.executeUpdate(query);
 	
 	%>
+	
+	<html><head><title>INSERT COMPLETE</title></head>
+	<h1> INSERT COMPLETE</h1>
+	</html>

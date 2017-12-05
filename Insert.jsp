@@ -8,11 +8,11 @@
 <% 
 String editTable = "Animals";
 editTable = request.getParameter("editTable");
-request.setAttribute("editTable", editTable);
 if (editTable.equals("Animals")) {
 %>
 
 <form action="InsertQuery.jsp" method = "get">
+<input type="hidden" name="editTable" value = "Animals">
   Animal ID#:<br>
   <input type="text" name="a_id"><br>
   Name:<br>
@@ -35,6 +35,7 @@ if (editTable.equals("Animals")) {
 
 if (editTable.equals("Employee")) {%>
 <form action="InsertQuery.jsp" method = "get">
+<input type="hidden" name="editTable" value = "Employee">
   Employee ID#:<br>
   <input type="text" name="w_id"><br>
   Name:<br>
@@ -49,6 +50,7 @@ if (editTable.equals("Employee")) {%>
 
 if (editTable.equals("Worker")) {%>
 <form action="InsertQuery.jsp" method = "get">
+<input type="hidden" name="editTable" value = "Worker">
   Worker ID#:<br>
   <input type="text" name="w_id"><br>
   Name:<br>
@@ -64,6 +66,7 @@ if (editTable.equals("Worker")) {%>
 
 if (editTable.equals("Foster")) {%>
 <form action="InsertQuery.jsp" method = "get">
+<input type="hidden" name="editTable" value = "Foster">
   Foster Name:<br>
   <input type="text" name="f_name"><br>
   Address:<br>
@@ -75,6 +78,7 @@ if (editTable.equals("Foster")) {%>
 
 if (editTable.equals("Adopter")) { %>
 <form action="InsertQuery.jsp" method = "get">
+<input type="hidden" name="editTable" value = "Adopter">
   Adopter ID#:<br>
   <input type="text" name="adpt_id"><br>
   Name:<br>
@@ -88,6 +92,7 @@ if (editTable.equals("Adopter")) { %>
 
 if (editTable.equals("Supplies")) { %>
 <form action="InsertQuery.jsp" method = "get">
+<input type="hidden" name="editTable" value = "Supplies">
   Supply ID#:<br>
   <input type="text" name="s_id"><br>
   Type:<br>
@@ -104,6 +109,7 @@ if (editTable.equals("Supplies")) { %>
 if (editTable.equals("Medical_Staff")) { 
 %>
 <form action="InsertQuery.jsp" method = "get">
+<input type="hidden" name="editTable" value = "Medical_Staff">
   Medical Staff ID#:<br>
   <input type="text" name="m_id"><br>
   Name:<br>
@@ -120,6 +126,7 @@ if (editTable.equals("Medical_Staff")) {
 if (editTable.equals("Manages")) { 
 %>
 <form action="InsertQuery.jsp" method = "get">
+<input type="hidden" name="editTable" value = "Manages">
   Manager ID#:<br>
   <input type="text" name="m_id"><br>
   Worker ID#:<br>
@@ -131,6 +138,7 @@ if (editTable.equals("Manages")) {
 
 if (editTable.equals("Fosters")) {%>
 <form action="InsertQuery.jsp" method = "get">
+<input type="hidden" name="editTable" value = "Fosters">
   Foster Name:<br>
   <input type="text" name="f_name"><br>
   Foster Address:<br>
@@ -147,6 +155,7 @@ if (editTable.equals("Fosters")) {%>
 if (editTable.equals("Uses")) { 
 %>
 <form action="InsertQuery.jsp" method = "get">
+<input type="hidden" name="editTable" value = "Uses">
   Worker ID#:<br>
   <input type="text" name="w_id"><br>
   Supply ID#:<br>
@@ -157,6 +166,7 @@ if (editTable.equals("Uses")) {
 if (editTable.equals("Adopts")) { 
 %>
 <form action="InsertQuery.jsp" method = "get">
+<input type="hidden" name="editTable" value = "Adopts">
   Animal ID#:<br>
   <input type="text" name="a_id"><br>
   Adopter ID#:<br>
@@ -170,6 +180,7 @@ if (editTable.equals("Appointment")) {
 %>
 
 <form action="InsertQuery.jsp" method = "get">
+<input type="hidden" name="editTable" value = "Appointment">
   Animal ID#:<br>
   <input type="text" name="a_id"><br>
   Medical Staff ID#:<br>
