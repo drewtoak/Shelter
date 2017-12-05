@@ -8,15 +8,18 @@
 <h1>Delete Entry</h1>
 
 <script type="text/javascript">
-$(document).ready(function () {
+ $(document).ready(function () {
     $('#checkBtn').click(function() {
-      checkedTexts = $("input[type=text]:checked").length;
-      if(!checkedTexts) {
-        alert("Please fill in all fields.");
-        return false;
-      }
+    	  numTexts = $("input[type=text]").length;
+    	  for (i = 0; i < numTexts; i++) {
+      	checkedTexts = $("input[type=text]")[i].value;
+      	if(checkedTexts == "") {
+        		alert("Please fill in all fields.");
+        		return false;
+      	}
+    	  }
     });
-});
+}); 
 </script>
 
 <body>
